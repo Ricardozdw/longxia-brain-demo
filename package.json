@@ -1,0 +1,22 @@
+{
+  "name": "longxia-brain-demo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "龙虾脑 MVP Demo：手机一句话，驱动电脑完成任务",
+  "type": "module",
+  "scripts": {
+    "start": "node src/launch.mjs",
+    "server": "node src/server.mjs",
+    "agent": "node src/agent/agent.mjs",
+    "seed": "node scripts/seed.mjs",
+    "test": "node --test tests/",
+    "reset": "node scripts/reset.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "playwright-core": "1.56.1"
+  },
+  "license": "MIT"
+}

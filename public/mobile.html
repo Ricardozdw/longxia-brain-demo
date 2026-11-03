@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="theme-color" content="#fbf8f5">
+  <title>龙虾脑</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="agent-id">
+      <span class="avatar">🦞</span>
+      <div><b>龙虾脑</b><small id="device"><i></i><span>连接中…</span></small></div>
+      <button id="clear" class="clear" hidden>🗑 清空记录</button>
+    </div>
+  </header>
+
+  <main id="thread" class="thread" aria-live="polite"></main>
+
+  <footer class="composer" id="composer">
+    <div class="chips" id="chips"></div>
+    <form id="form">
+      <textarea id="input" rows="1" maxlength="200" placeholder="想让电脑做什么？" enterkeyhint="send"></textarea>
+      <button id="send" type="submit" aria-label="发送">↑</button>
+    </form>
+  </footer>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="/mobile.js"></script>
+</body>
+</html>

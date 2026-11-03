@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>龙虾脑 · 运营后台</title>
+  <link rel="stylesheet" href="/admin.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <header class="bar">
+    <div class="title">🦞 <b>龙虾脑</b> 运营后台 <span class="tag">MVP</span></div>
+    <div class="bar-right">
+      <label class="toggle" id="mock-toggle" hidden><input type="checkbox" id="include-mock"> 包含模拟历史数据</label>
+      <span id="parser" class="pill"></span>
+      <span id="device" class="pill"></span>
+    </div>
+  </header>
+
+  <main>
+    <section class="grid top-grid">
+      <div class="kpis" id="kpis"></div>
+      <div class="card pair">
+        <h3>手机扫码使用</h3>
+        <div id="qr" class="qr"></div>
+        <p class="muted small">手机与电脑连同一 Wi-Fi，扫码即完成绑定</p>
+        <a id="phone-url" class="small mono" target="_blank"></a>
+      </div>
+    </section>
+
+    <section class="grid two">
+      <div class="card">
+        <h3>近 7 天任务趋势</h3>
+        <div class="legend">
+          <span><i class="sw ok"></i>成功</span><span><i class="sw bad"></i>失败</span><span><i class="sw warn"></i>需补充信息</span>
+        </div>
+        <div id="trend" class="trend"></div>
+      </div>
+      <div class="card">
+        <h3>任务转化漏斗</h3>
+        <div id="funnel" class="hbars"></div>
+      </div>
+    </section>
+
+    <section class="grid two">
+      <div class="card">
+        <h3>场景表现</h3>
+        <table class="scen" id="scenarios"></table>
+      </div>
+      <div class="card">
+        <h3>失败与异常原因 Top</h3>
+        <div id="reasons" class="hbars"></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="row-head">
+        <h3>任务明细</h3>
+        <div class="filters" id="filters">
+          <button data-f="all" class="on">全部</button><button data-f="success">成功</button><button data-f="failed">失败</button><button data-f="need_input">需补充</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="tasks">
+          <thead><tr><th>时间</th><th>用户指令</th><th>识别场景</th><th>状态</th><th>耗时</th><th>结果 / 原因</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <div id="tip" class="tooltip" hidden></div>
+  <script src="/admin.js"></script>
+</body>
+</html>
